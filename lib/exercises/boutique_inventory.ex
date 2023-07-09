@@ -8,17 +8,18 @@ defmodule BoutiqueInventory do
   end
 
   def update_names(inventory, old_word, new_word) do
-    Enum.map(inventory, fn item -> %{item | name: String.replace(item.name, old_word, new_word) } end)
+    inventory
+    |> Enum.map(&%{&1 | name: String.replace(&1.name, old_word, new_word)})
   end
 
-  def increase_quantity(item, count) do
+  def increase_quantity(%{ quantity_by_size: sizes } = item, count) do
     %{
       item |
-      quantity_by_size: Map.new(item.quantity_by_size, fn {key, value} -> {key, value + count} end)
+      quantity_by_size: Map.new(sizes, fn {key, value} -> {key, value + count} end)
     }
   end
 
-  def total_quantity(item) do
-    Enum.reduce(item.quantity_by_size, 0, fn {_key, value}, acc -> value + acc end)
+  def total_quantity(%{ quantity_by_size: sizes }) do
+    Enum.reduce(sizes, 0, fn {_key, value}, acc -> value + acc end)
   end
 end
