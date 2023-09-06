@@ -35,12 +35,3 @@ defmodule CommunityGarden do
 
   defp new_plot(id, registered_to), do: %Plot{plot_id: id, registered_to: registered_to}
 end
-
-{_, pid} = CommunityGarden.start()
-CommunityGarden.register(pid, "Marcio")
-plot = CommunityGarden.register(pid, "Gabriel")
-# IO.inspect CommunityGarden.list_registrations(pid)
-CommunityGarden.release(pid, plot.plot_id)
-# IO.inspect CommunityGarden.list_registrations(pid)
-CommunityGarden.register(pid, "Gabriel")
-# IO.inspect CommunityGarden.list_registrations(pid)
