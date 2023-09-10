@@ -14,8 +14,7 @@ defmodule CommunityGarden do
   end
 
   def register(pid, register_to) do
-    Agent.get_and_update(pid, fn {id, plots} = state ->
-      IO.inspect state
+    Agent.get_and_update(pid, fn {id, plots} ->
       plot = new_plot(id+1, register_to)
 
       {plot, {id + 1, [plot | plots]}}
