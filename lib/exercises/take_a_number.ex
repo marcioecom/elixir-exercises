@@ -13,9 +13,11 @@ defmodule TakeANumber do
         send(from, num + 1)
         handle(num + 1)
 
-      :stop -> Process.exit(self(), :kill)
+      :stop ->
+        Process.exit(self(), :kill)
 
-      _ -> handle(num)
+      _ ->
+        handle(num)
     end
   end
 end

@@ -15,7 +15,7 @@ defmodule CommunityGarden do
 
   def register(pid, register_to) do
     Agent.get_and_update(pid, fn {id, plots} ->
-      plot = new_plot(id+1, register_to)
+      plot = new_plot(id + 1, register_to)
 
       {plot, {id + 1, [plot | plots]}}
     end)

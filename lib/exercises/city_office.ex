@@ -11,10 +11,10 @@ defmodule Form do
   """
 
   @type address_map :: %{
-    street: String.t(),
-    postal_code: String.t(),
-    city: String.t()
-  }
+          street: String.t(),
+          postal_code: String.t(),
+          city: String.t()
+        }
 
   @type address_tuple :: {street :: String.t(), postal_code :: String.t(), city :: String.t()}
 
@@ -37,7 +37,6 @@ defmodule Form do
     |> String.upcase()
     |> String.split("", trim: true)
   end
-
 
   @doc """
   Checks if the value has no more than the maximum allowed number of letters.

@@ -21,21 +21,21 @@ defmodule HighSchoolSweetheart do
     initials1 = initials(full_name1)
     initials2 = initials(full_name2)
 
-"""
-    ******       ******
-  **      **   **      **
-**         ** **         **
-**            *            **
-**                         **
-**     #{initials1}  +  #{initials2}     **
- **                       **
-   **                   **
-     **               **
-       **           **
-         **       **
-           **   **
-             ***
-              *
-"""
+    """
+        ******       ******
+      **      **   **      **
+    **         ** **         **
+    **            *            **
+    **                         **
+    **     #{initials1}  +  #{initials2}     **
+     **                       **
+       **                   **
+         **               **
+           **           **
+             **       **
+               **   **
+                 ***
+                  *
+    """
   end
 end

@@ -5,7 +5,7 @@ defmodule GuessingGame do
   # def compare(secret_number, guess) when guess + 1 === secret_number or guess - 1 === secret_number do
   #   "So close"
   # end
-  def compare(secret_number, guess) when guess in [secret_number+1, secret_number-1] do
+  def compare(secret_number, guess) when guess in [secret_number + 1, secret_number - 1] do
     "So close"
   end
 

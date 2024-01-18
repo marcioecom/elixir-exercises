@@ -63,7 +63,7 @@ defmodule LibraryFees do
   @spec days_late(Date.t(), NaiveDateTime.t()) :: non_neg_integer()
   def days_late(planned_return_date, actual_return_datetime) do
     actual_return_datetime
-    |> NaiveDateTime.to_date
+    |> NaiveDateTime.to_date()
     |> Date.diff(planned_return_date)
     |> max(0)
   end
@@ -99,12 +99,14 @@ defmodule LibraryFees do
   """
   @spec calculate_late_fee(String.t(), String.t(), non_neg_integer()) :: non_neg_integer()
   def calculate_late_fee(checkout, return, rate) do
-    planned_return_date = checkout
-    |> datetime_from_string
-    |> return_date
+    planned_return_date =
+      checkout
+      |> datetime_from_string
+      |> return_date
 
-    actual_return_datetime = return
-    |> datetime_from_string
+    actual_return_datetime =
+      return
+      |> datetime_from_string
 
     planned_return_date
     |> days_late(actual_return_datetime)

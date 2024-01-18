@@ -3,14 +3,16 @@ defmodule WineCellar do
     [
       white: "Fermented without skin contact.",
       red: "Fermented with skin contact using dark-colored grapes.",
-      rose: "Fermented with some skin contact, but not enough to qualify as a red wine.",
+      rose: "Fermented with some skin contact, but not enough to qualify as a red wine."
     ]
   end
 
   def filter(cellar, color, opts \\ []) do
     Keyword.get_values(cellar, color)
-    |> filter_by_year(Keyword.get(opts, :year)) # opts[:year]
-    |> filter_by_country(Keyword.get(opts, :country)) # opts[:country]
+    # opts[:year]
+    |> filter_by_year(Keyword.get(opts, :year))
+    # opts[:country]
+    |> filter_by_country(Keyword.get(opts, :country))
   end
 
   # The functions below do not need to be modified.

@@ -12,4 +12,4 @@ defmodule NameBadge do
   end
 end
 
-IO.puts NameBadge.print(nil, "Márcio", "development")
+IO.puts(NameBadge.print(nil, "Márcio", "development"))

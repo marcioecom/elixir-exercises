@@ -5,7 +5,7 @@ defmodule RPNCalculatorInspection do
   end
 
   def await_reliability_check_result(%{pid: pid, input: input}, results) do
-     receive do
+    receive do
       {:EXIT, ^pid, :normal} -> Map.put(results, input, :ok)
       {:EXIT, ^pid, _reason} -> Map.put(results, input, :error)
     after

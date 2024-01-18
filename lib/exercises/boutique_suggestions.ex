@@ -19,9 +19,10 @@ tops = [
   %{item_name: "Dress shirt", base_color: "blue", price: 35},
   %{item_name: "Casual shirt", base_color: "black", price: 20}
 ]
+
 bottoms = [
   %{item_name: "Jeans", base_color: "blue", price: 30},
   %{item_name: "Dress trousers", base_color: "black", price: 75}
 ]
 
-IO.inspect BoutiqueSuggestions.get_combinations(tops, bottoms, maximum_price: 50)
+IO.inspect(BoutiqueSuggestions.get_combinations(tops, bottoms, maximum_price: 50))

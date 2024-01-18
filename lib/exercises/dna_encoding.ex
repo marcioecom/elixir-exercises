@@ -10,7 +10,7 @@ defmodule DNA do
   end
 
   def decode_nucleotide(encoded_code) do
-     cond do
+    cond do
       encoded_code == 0b0000 -> ?\s
       encoded_code == 0b0001 -> ?A
       encoded_code == 0b0010 -> ?C

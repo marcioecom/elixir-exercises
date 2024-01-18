@@ -24,5 +24,5 @@ data = %{
   }
 }
 
-IO.puts BasketballWebsite.extract_from_path(data, "team_mascot.animal")
-IO.puts BasketballWebsite.get_in_path(data, "team_mascot.animal")
+IO.puts(BasketballWebsite.extract_from_path(data, "team_mascot.animal"))
+IO.puts(BasketballWebsite.get_in_path(data, "team_mascot.animal"))
